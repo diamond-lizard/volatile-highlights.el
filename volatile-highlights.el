@@ -409,7 +409,7 @@ Optional args are the same as `vhl/add-range'."
   (let ((fn-on  (intern (format "vhl/ext/%s/on" sym)))
         (fn-off (intern (format "vhl/ext/%s/off" sym)))
         (cust-name (intern (format "vhl/use-%s-extension-p" sym))))
-    (pushnew sym vhl/.installed-extensions)
+    (cl-pushnew sym vhl/.installed-extensions)
     (eval `(defcustom ,cust-name t
              ,(format "A flag if highlighting support for `%s' is on or not." sym)
              :type 'boolean
